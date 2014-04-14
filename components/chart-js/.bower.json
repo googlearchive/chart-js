@@ -5,11 +5,11 @@
     "polymer": "Polymer/polymer#master"
   },
   "homepage": "https://github.com/Polymer/chart-js",
-  "_release": "ea2c40c40b",
+  "_release": "8ced328dea",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "ea2c40c40bc6b733fd1d3183efef1b288bb7bc60"
+    "commit": "8ced328dea0d698e61b1610153e7263e1b39fdfa"
   },
   "_source": "git://github.com/Polymer/chart-js.git",
   "_target": "master",
