@@ -29,11 +29,9 @@ license that can be found in the LICENSE file.
     <style>
       :host {
         display: block;
-        width: 300px;
-        height: 260px;
       }
     </style>
-    <canvas id="chart" width="100" height="100"></canvas> 
+    <canvas id="chart"></canvas>
   </template>
   <script>
     Polymer('chart-js', {
@@ -42,14 +40,11 @@ license that can be found in the LICENSE file.
       options: null,
       color: '#AABBDD',
       dataString: '28,48,40,19,96,27,100',
-      enteredView: function() {
-        this.$.chart.width = Math.max(this.offsetWidth, 100);
-        this.$.chart.height = Math.max(this.offsetHeight, 100);
+      attached: function() {
         //Get the context of the canvas element we want to select
         this.ctx = this.$.chart.getContext('2d');
         if (!this.kind) {
           this.kind = ['Radar', 'Line', 'Bar'][Math.floor(Math.random()*3)];
-          
         }
         this.dataStringChanged(); 
       },
@@ -79,8 +74,8 @@ license that can be found in the LICENSE file.
             return previousValue;
           }, []);
         var rgbColor = this.hexToRgb(this.color).join(',');
-        this.data = {
-          labels: ['January','February','March','April','May','June','July'],
+        this.data = this.data || {
+          labels: ['THIS','IS','A','DEFAULT','VIEW','DUE TO','NO DATA'],
           datasets: [
             {
               fillColor : 'rgba(' + rgbColor + ', 0.5)',
