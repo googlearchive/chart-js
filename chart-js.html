@@ -40,7 +40,7 @@ license that can be found in the LICENSE file.
       options: null,
       color: '#AABBDD',
       dataString: '28,48,40,19,96,27,100',
-      ready: function() {
+      attached: function() {
         //Get the context of the canvas element we want to select
         this.ctx = this.$.chart.getContext('2d');
         if (!this.kind) {
